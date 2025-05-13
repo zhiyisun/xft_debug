@@ -39,4 +39,6 @@ docker build -t ${IMAGE_NAME} \
 echo "Starting Docker container..."
 docker run -it --rm \
     --mount type=bind,source=$(pwd),target=/home/ubuntu/xft_debug \
+    --cap-add=SYS_NICE \
+    --security-opt seccomp=unconfined \
     ${IMAGE_NAME} /bin/bash

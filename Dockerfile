@@ -30,7 +30,7 @@ ARG ssh_prv_key
 ARG ssh_pub_key
 
 # System packages needed for development
-ARG PACKAGES="gpg-agent ca-certificates libnuma-dev openssh-server build-essential \
+ARG PACKAGES="gpg-agent ca-certificates libnuma-dev numactl openssh-server build-essential \
     curl git wget locales tzdata sudo gnupg ca-certificates cmake"
 
 # Install system packages
