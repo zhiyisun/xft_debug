@@ -47,10 +47,12 @@ huggingface-cli download Qwen/Qwen3-0.6B --local-dir qwen --exclude "original/*"
 # Step 3: Convert the model to xFasterTransformer format
 echo "Converting model to xFasterTransformer format..."
 python -c 'import xfastertransformer as xft; xft.LlamaConvert().convert("./qwen","./qwen-xft")'
+sudo mkdir /data
+sudo mv ./qwen-xft /data/Qwen3-0.6B-xft
 
 # Step 4: Run benchmarks on the converted model
 echo "Running benchmarks on the converted model..."
 cd benchmark
-./run_benchmark.sh -m qwen3-0.6b -mp ../qwen-xft/
+./run_benchmark.sh -m qwen3-0.6b -mp ../examples/model_config/qwen3-0.6b
 
 echo "Benchmark completed successfully!"
