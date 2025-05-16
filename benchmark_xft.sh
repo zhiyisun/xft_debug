@@ -8,7 +8,7 @@
 # 3. Converts the model to xFasterTransformer format
 # 4. Runs benchmarks on the converted model
 #
-# Usage: HF_TOKEN=your_token_here ./bench.sh
+# Usage: HF_TOKEN=your_token_here ./benchmark_xft.sh
 
 # Exit on any error
 set -e
@@ -19,7 +19,7 @@ set -x
 # Check if HF_TOKEN is provided
 if [ -z "$HF_TOKEN" ]; then
   echo "Error: HF_TOKEN environment variable is not set"
-  echo "Please run the script with: HF_TOKEN=your_token_here ./bench.sh"
+  echo "Please run the script with: HF_TOKEN=your_token_here ./benchmark_xft.sh"
   exit 1
 fi
 
