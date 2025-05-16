@@ -18,7 +18,7 @@ WORKSPACE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # ----------------------------------------------------------
 if [ ! -d "xFasterTransformer" ]; then
     echo "Cloning xFasterTransformer repository..."
-    git clone git@github.com:zhiyisun/xFasterTransformer.git
+    git clone -b xdnn_debug https://github.com/zhiyisun/xFasterTransformer.git
 else
     echo "xFasterTransformer directory already exists, skipping clone."
 fi
