@@ -46,7 +46,7 @@ huggingface-cli download Qwen/Qwen3-0.6B --local-dir qwen --exclude "original/*"
 
 # Step 3: Convert the model to xFasterTransformer format
 echo "Converting model to xFasterTransformer format..."
-python -c 'import xfastertransformer as xft; xft.LlamaConvert().convert("./qwen","./qwen-xft")'
+python -c 'import xfastertransformer as xft; model_converter=xft.Qwen3Convert(); model_converter.convert("./qwen","./qwen-xft")'
 
 # Create /data directory if it doesn't exist
 if [ ! -d "/data" ]; then
