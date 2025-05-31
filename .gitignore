@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Model files and directories
+models/
+
+# Third-party repositories and build artifacts
+xdnn-reloaded/
+xFasterTransformer/

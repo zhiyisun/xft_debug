@@ -1,11 +1,17 @@
 #!/bin/bash
 #
-# setup.sh: Setup script for xFasterTransformer development environment
+# setup_docker.sh: Setup Docker environment for xFasterTransformer development
+# 
 # This script:
 # 1. Clones the xFasterTransformer repository if it doesn't exist
 # 2. Builds a Docker image with necessary dependencies
 # 3. Runs a Docker container with the current directory mounted
 #
+# Usage: ./setup_docker.sh
+#
+# Note: After running this script and entering the container,
+#       run ./setup_environment.sh to setup xFasterTransformer
+#       Then use ./benchmark_models.sh to benchmark models
 
 # Configuration
 IMAGE_NAME="xft"
@@ -41,4 +47,5 @@ docker run -it --rm \
     --mount type=bind,source=$(pwd),target=/home/ubuntu/xft_debug \
     --cap-add=SYS_NICE \
     --security-opt seccomp=unconfined \
+    --workdir /home/ubuntu/xft_debug \
     ${IMAGE_NAME} /bin/bash
