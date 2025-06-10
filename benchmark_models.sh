@@ -119,7 +119,7 @@ echo ""
 
 # Navigate to benchmark directory and execute
 cd xFasterTransformer/benchmark
-./run_benchmark.sh -m "$BENCHMARK_MODEL" -mp "$BENCHMARK_CONFIG"
+./run_benchmark.sh -m "$BENCHMARK_MODEL" -mp "$BENCHMARK_CONFIG" -tp ../examples/model_config/$BENCHMARK_MODEL -in 32 -out 32 -i 1
 
 echo ""
 echo "✅ Benchmark completed successfully!"
