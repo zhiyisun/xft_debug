@@ -126,7 +126,7 @@ echo ""
 cd xFasterTransformer/examples/pytorch
 
 echo "Launching demo..."
-python3 demo.py -t "$DEMO_CONFIG" -m "$DATA_DIR"
+python3 demo.py -t "$DEMO_CONFIG" -m "$DATA_DIR" -d bf16
 
 echo ""
 echo "✅ Demo completed successfully!"
